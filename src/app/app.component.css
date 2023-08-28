@@ -1,0 +1,9 @@
+.toggled-sidebar {
+    width: 70px;
+}
+
+.main-content {
+    flex-grow: 1;
+    transition: all 0.2s;
+}
+

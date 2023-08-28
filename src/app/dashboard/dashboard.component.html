@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-between">
+    <h1 class="h1 pt-3 ps-3">DASHBOARD</h1>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb pt-3 pe-3">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+                Dashboard
+            </li>
+        </ol>
+    </nav>
+</div>
+
+<div class="container-fluid text-center">
+    <div class="row">
+        <app-chart></app-chart>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12">
+            <app-scheduler></app-scheduler>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <app-to-do-list></app-to-do-list>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <app-feed></app-feed>
+        </div>
+    </div>
+</div>

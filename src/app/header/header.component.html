@@ -1,0 +1,95 @@
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand ms-4">
+            Admin<span class="highlight">Panel</span></a
+        >
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul
+                class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+                style="--bs-scroll-height: 100px"
+            >
+                <li class="nav-item mt-1">
+                    <button class="burger" (click)="toggleSidebar()">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </li>
+                <li class="nav-item mt-1 ms-4">
+                    <i
+                        class="fa-solid fa-magnifying-glass icon"
+                        style="color: #f7f7f7"
+                    ></i>
+                    <input
+                        class="search-bar ms-3"
+                        type="search"
+                        placeholder="Search for ..."
+                    />
+                </li>
+            </ul>
+            <ul
+                class="d-flex justify-content-start my-lg-0"
+                clickOutside
+                (clickedOutside)="onClickedOutside()"
+            >
+                <li class="nav-item mt-2 me-3 pt-1">
+                    <a class="notification"
+                        ><i class="fa-regular fa-bell fa-sm"></i>
+                        <span
+                            class="position-absolute bottom-50 badge badge-smaller rounded-pill bg-danger"
+                        >
+                            5+
+                        </span></a
+                    >
+                </li>
+
+                <li class="nav-item mt-2 me-4 pt-1">
+                    <a class="mail"
+                        ><i class="fa-regular fa-envelope fa-sm"></i
+                        ><span
+                            class="position-absolute bottom-50 badge badge-smaller rounded-pill bg-danger"
+                        >
+                            5+
+                        </span></a
+                    >
+                </li>
+
+                <li class="nav-item dropdown" (click)="toggleDropDown()">
+                    <a
+                        class="nav-link"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        <img
+                            class="profile-img img-fluid"
+                            src="../../assets/gosling.jpg"
+                            alt="Gosling"
+                        />
+                    </a>
+                    <ul
+                        class="dropdown-menu top-0 end-50 mt-5"
+                        *ngIf="menuOpened"
+                    >
+                        <li>
+                            <a class="dropdown-item" href="#">Profile</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

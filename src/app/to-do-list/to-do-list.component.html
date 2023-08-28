@@ -1,0 +1,45 @@
+<div class="card mt-4">
+    <div class="card-header text-start">TO DO LIST</div>
+    <div class="card-body">
+        <form (ngSubmit)="addTask()">
+            <div class="mb-3">
+                <label for="todo" class="form-label"></label>
+                <input
+                    type="text"
+                    class="form-control form-control-sm w-50"
+                    id="toDo"
+                    placeholder="Task to do.... "
+                    [(ngModel)]="newTask"
+                    name="newTask"
+                />
+            </div>
+            <div
+                class="form-check text-start fun-hover"
+                *ngFor="let task of tasks; let i = index"
+            >
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            [value]="task"
+                            [id]="task"
+                        />
+                        <label class="form-check-label boxes" [for]="task">
+                            {{ task }}
+                        </label>
+                    </div>
+                    <div>
+                        <button
+                            class="btn btn-danger btn-sm"
+                            type="button"
+                            (click)="removeTask(i)"
+                        >
+                            X
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+* {
+    font-family: monospace, sans-serif;
+}
+
+li {
+    list-style-type: none;
+}
+
+.badge-smaller {
+    font-size: 0.75rem;
+    padding: 0.2em 0.3em;
+}
+
+.navbar {
+    background-color: #1c2b36;
+    box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.burger {
+    border: 0;
+    background: none;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.burger:hover {
+    color: #ec8b4b;
+}
+
+.highlight {
+    color: #209e91;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(245, 236, 236);
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.navbar-brand:hover,
+.mail:hover {
+    color: #209e91;
+}
+
+.search-bar {
+    border: none;
+    background: 0 0;
+    color: white;
+    outline: 0;
+    width: 150px;
+    padding: 0;
+    margin: 0 0 0 -3px;
+    height: 27px;
+}
+
+.navbar-nav {
+    margin-right: 1rem;
+}
+.navbar-toggler {
+    background-color: white;
+}
+
+.notification,
+.mail {
+    cursor: pointer;
+    color: white;
+    margin-right: 25px;
+    transition: 0.5s ease;
+}
+
+.notification:hover {
+    color: #c23025;
+}
+
+.profile-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.dropdown-menu {
+    display: block;
+}

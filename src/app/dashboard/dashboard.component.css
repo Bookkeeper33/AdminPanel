@@ -1,0 +1,33 @@
+/* .box1,
+.box2,
+.box3,
+.box4 {
+    border: 1px solid black;
+    width: 50%;
+    height: 50px;
+} */
+
+.h1,
+.breadcrumb-item {
+    font-family: monospace, "sans-serif", Georgia;
+    font-weight: bold;
+    color: #666;
+}
+
+a {
+    text-decoration: none;
+    color: #209e91;
+}
+
+.breadcrumb-item {
+    font-size: 1.2rem;
+}
+
+.h1 {
+    font-size: 1.5rem;
+}
+
+.active::before {
+    opacity: 0.2;
+    font-weight: 200;
+}

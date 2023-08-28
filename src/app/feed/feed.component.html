@@ -1,0 +1,18 @@
+<div class="card mt-4">
+    <div class="card-header text-start">FEED</div>
+    <div class="feed row g-0 border" *ngFor="let msg of messages">
+        <div class="col-2 col-lg-2 col-md-2 col-sm-2 mt-1">
+            <img
+                [src]="msg?.picture"
+                class="img-fluid rounded-circle"
+                [alt]="msg.name"
+            />
+        </div>
+        <div class="col-8 col-lg-10 col-md-10 col-sm-10">
+            <div class="card-body text-start pt-2 pe-2">
+                <h5 class="card-title">{{ msg?.name }}</h5>
+                <p class="card-text">{{ msg?.message }}</p>
+            </div>
+        </div>
+    </div>
+</div>
