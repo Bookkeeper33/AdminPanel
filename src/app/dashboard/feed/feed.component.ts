@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FeedService } from "./feed.service";
-import { UserMessage } from "../shared/user-message.interface";
+import { UserMessage } from "../../shared/user-message.interface";
 import { Subject, takeUntil } from "rxjs";
 
 @Component({
@@ -22,7 +22,8 @@ export class FeedComponent implements OnInit {
                 this.messages = data.results.map((item: any) => {
                     return {
                         name: item.name.first + " " + item.name.last,
-                        message: "Lorem Pipsum and some text message like in real feed",
+                        message:
+                            "Lorem Pipsum and some text message like in real feed",
                         picture: item.picture.thumbnail,
                     };
                 });

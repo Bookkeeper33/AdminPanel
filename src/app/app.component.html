@@ -2,35 +2,15 @@
 <div class="container-fluid">
     <div class="row">
         <div
-            class="col-md-1 d-none d-md-block sidebar"
+            class="col-md-2 d-none d-md-block sidebar"
             [ngClass]="isToggledSidebar ? 'toggled-sidebar' : ''"
         >
             <app-sidebar></app-sidebar>
         </div>
-        <div class="col-md-11 col-sm-12 main-content">
-            <app-dashboard></app-dashboard>
+        <div class="col-md-10 col-sm-12 main-content">
+            <!-- <app-dashboard></app-dashboard> -->
+            <app-mail></app-mail>
             <app-footer></app-footer>
         </div>
     </div>
 </div>
-
-<!-- <app-header></app-header>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-2 d-none d-md-block">
-            <app-sidebar></app-sidebar>
-        </div>
-        <div class="col-md-10 col-sm-12">
-            <div class="row">
-                <div class="col">
-                    <app-dashboard></app-dashboard>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <app-footer></app-footer>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->

@@ -1,0 +1,32 @@
+.container-fluid {
+    height: 700px;
+    max-height: 1000px;
+}
+
+/* Breadcrumb  */
+.h1,
+.breadcrumb-item {
+    font-family: monospace, "sans-serif", Georgia;
+    font-weight: bold;
+    color: #666;
+}
+
+a {
+    text-decoration: none;
+    color: #209e91;
+}
+
+.breadcrumb-item {
+    font-size: 1.2rem;
+}
+
+.h1 {
+    font-size: 1.5rem;
+}
+
+.active::before {
+    opacity: 0.2;
+    font-weight: 200;
+}
+
+/* navigation */
