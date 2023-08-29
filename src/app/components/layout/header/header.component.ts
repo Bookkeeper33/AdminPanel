@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { SidebarToggleService } from "../shared/toggle.service";
+import { SidebarToggleService } from "../../../shared/toggle.service";
 
 @Component({
     selector: "app-header",

@@ -1,0 +1,66 @@
+.nav-link {
+    border-radius: 35px;
+    color: #000000;
+    &:hover {
+        background-color: #dcdcdc;
+    }
+}
+
+.nav-active {
+    background-color: #a8c7fa;
+}
+
+/* Compose button */
+.button-compose {
+    text-align: center;
+    cursor: pointer;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+.button-compose:hover {
+    transform: scaleY(1.1) scaleX(1.1);
+    background-color: #209e91;
+}
+
+/* Labels */
+.labels {
+    margin-top: 30px;
+}
+
+.labels-container {
+    margin-top: 20px;
+    text-align: center;
+    padding-right: 15px;
+    padding-left: 15px;
+    max-height: 300px;
+    overflow: auto;
+}
+
+.label-item {
+    font-size: 0.7em;
+    width: 35%;
+    margin: 10px;
+    background-color: orangered;
+    border-radius: 5%;
+}
+
+.labels-container,
+.label-item {
+    display: inline-block;
+}
+
+.button {
+    display: block;
+    border: none;
+    font-size: 0.8em;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.button-add {
+    font-size: 1.5em;
+    font-weight: bold;
+}

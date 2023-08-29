@@ -1,0 +1,33 @@
+.table-container {
+    height: 500px; /* Set the desired height for the scrollable area */
+    overflow: auto; /* Enable vertical scrolling if content overflows */
+}
+.navigation {
+    width: 13%;
+}
+
+.nav-link {
+    color: #333;
+}
+
+.list-group-item {
+    border: none;
+}
+
+.list-group-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.list-group-item h3 {
+    font-size: 16px;
+}
+
+.list-group-item h4 {
+    font-size: 14px;
+}
+
+.list-group-item p {
+    font-size: 12px;
+}
