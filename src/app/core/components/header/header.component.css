@@ -83,3 +83,7 @@ li {
 .dropdown-menu {
     display: block;
 }
+
+.dropdown-item {
+    cursor: pointer;
+}

@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Mail } from "../mail.interface";
+import { Mail } from "../interfaces/mail.interface";
 
 @Component({
     selector: "app-mail-list",

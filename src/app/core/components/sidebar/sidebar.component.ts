@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Subscription } from "rxjs";
-import { SidebarToggleService } from "../../../shared/toggle.service";
+import { SidebarToggleService } from "../../../shared/services/toggle.service";
 
 @Component({
     selector: "app-sidebar",

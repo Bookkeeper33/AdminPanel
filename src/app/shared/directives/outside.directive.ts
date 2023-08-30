@@ -4,7 +4,6 @@ import {
     Directive,
     ElementRef,
     EventEmitter,
-    HostListener,
     Inject,
     OnDestroy,
     Output,

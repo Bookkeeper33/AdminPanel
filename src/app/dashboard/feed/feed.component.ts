@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { FeedService } from "./feed.service";
-import { UserMessage } from "../../shared/user-message.interface";
+import { FeedService } from "../services/feed.service";
+import { UserMessage } from "../../shared/interfaces/user-message.interface";
 import { Subject, takeUntil } from "rxjs";
 
 @Component({

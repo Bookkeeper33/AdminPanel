@@ -1,28 +1,28 @@
-<div class="sidebar" [class.hide]="sidebarOpen">
+<aside class="sidebar" [class.hide]="sidebarOpen">
     <ul class="nav flex-column align-items-center">
-        <li class="nav-item active">
-            <a class="nav-link" href="#">
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/dashboard">
                 <i class="fa-solid fa-house fa-2xs"></i>
                 <span class="title">Dashboard</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/mail">
                 <i class="fa-solid fa-envelope fa-2xs"></i>
                 <span class="title">Mail</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link">
                 <i class="fa-solid fa-user fa-2xs"></i>
                 <span class="title">Profile</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link">
                 <i class="fa-solid fa-users-rectangle fa-2xs"></i>
                 <span class="title">Users</span>
             </a>
         </li>
     </ul>
-</div>
+</aside>

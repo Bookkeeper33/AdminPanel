@@ -3,7 +3,6 @@ import { Injectable } from "@angular/core";
 
 import { Observable, throwError } from "rxjs";
 import { catchError, retry } from "rxjs/operators";
-import { UserMessage } from "../../shared/user-message.interface";
 
 @Injectable({
     providedIn: "root",
