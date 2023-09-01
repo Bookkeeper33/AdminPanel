@@ -2,7 +2,13 @@
     <button class="btn btn-light w-75 border button-compose">Compose</button>
 </div>
 <div class="nav flex-column" *ngFor="let category of categories">
-    <a class="nav-link" href="#">{{ category }}</a>
+    <a
+        class="nav-link"
+        type="button"
+        (click)="onCategorySelected(category)"
+        [ngClass]="{ 'nav-active': selectedCategory === category }"
+        >{{ category }}</a
+    >
 </div>
 <div class="labels text-center">
     <div class="labels-container">

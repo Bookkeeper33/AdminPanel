@@ -31,3 +31,10 @@
 .list-group-item p {
     font-size: 12px;
 }
+
+.label-item {
+    font-size: 0.7em;
+    width: 40%;
+    text-align: center;
+    border-radius: 5%;
+}

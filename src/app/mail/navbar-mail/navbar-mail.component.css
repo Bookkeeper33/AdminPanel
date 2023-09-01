@@ -1,7 +1,7 @@
 .nav-link {
     border-radius: 35px;
     color: #000000;
-    &:hover {
+    &:not(.nav-active):hover {
         background-color: #dcdcdc;
     }
 }
