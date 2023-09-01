@@ -4,7 +4,9 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.2.
 
 ## Preview
+
 ![Alt text](image.png) ![Alt text](image-1.png)
+![Alt text](image-2.png)![Alt text](image-3.png)
 
 ## Development server
 
