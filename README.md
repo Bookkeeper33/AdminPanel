@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Preview
 
-![Alt text](image.png) ![Alt text](image-1.png)
+![Alt text](preview.gif.gif)
 
 ## Development server
 
