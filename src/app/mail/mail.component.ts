@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { BreadcrumbService } from "../shared/services/breadcrumb.service";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "app-mail",
@@ -7,9 +8,12 @@ import { BreadcrumbService } from "../shared/services/breadcrumb.service";
     styleUrls: ["./mail.component.css"],
 })
 export class MailComponent implements OnInit {
-    constructor(private breadCrumb: BreadcrumbService) {}
+    constructor(
+        private breadCrumb: BreadcrumbService
+    ) {}
 
     ngOnInit(): void {
         this.breadCrumb.setTitle("Mail");
+    
     }
 }

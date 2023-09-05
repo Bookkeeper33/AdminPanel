@@ -5,8 +5,8 @@
     <a
         class="nav-link"
         type="button"
-        (click)="onCategorySelected(category)"
-        [ngClass]="{ 'nav-active': selectedCategory === category }"
+        [routerLink]="category"
+        routerLinkActive="nav-active"
         >{{ category }}</a
     >
 </div>
@@ -24,3 +24,5 @@
         </button>
     </div>
 </div>
+<!-- (click)="onCategorySelected(category)"
+        [ngClass]="{ 'nav-active': selectedCategory === category }" -->

@@ -19,6 +19,10 @@ const routes: Routes = [
         loadChildren: () =>
             import("./mail/mail.module").then((m) => m.MailModule),
     },
+    {
+        path: "**",
+        redirectTo: "/dashboard",
+    },
 ];
 
 @NgModule({

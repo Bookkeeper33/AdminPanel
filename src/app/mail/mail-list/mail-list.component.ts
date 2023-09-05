@@ -1,35 +1,62 @@
-import { AfterViewInit, Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { ActivatedRoute, ParamMap } from "@angular/router";
+import { Observable, Subscription } from "rxjs";
+
 import { Mail } from "../interfaces/mail.interface";
 import { MailService } from "../mail.service";
-import { Subscription } from "rxjs";
 
 @Component({
     selector: "app-mail-list",
     templateUrl: "./mail-list.component.html",
     styleUrls: ["./mail-list.component.css"],
 })
-export class MailListComponent implements OnInit, AfterViewInit, OnDestroy {
-    mails: Mail[] = [];
-    mailsSubscription!: Subscription;
+export class MailListComponent implements OnInit, OnDestroy {
+    mails$!: Observable<Mail[]> | undefined;
+    category: string = "";
 
-    constructor(private mailService: MailService) {}
+    private paramMapSubscription!: Subscription;
+
+    constructor(
+        private route: ActivatedRoute,
+        private mailService: MailService
+    ) {}
 
     ngOnInit(): void {
-        this.mails = this.mailService.getMails();
+        this.paramMapSubscription = this.route.paramMap.subscribe(
+            (params: ParamMap) => {
+                this.category = params.get("category")!;
+                this.loadMails(this.category);
+            }
+        );
     }
 
-    ngAfterViewInit(): void {
-        this.mailsSubscription =
-            this.mailService.selectedCategorySubject.subscribe((category) => {
-                if (category === "Inbox") {
-                    this.mails = this.mailService.getMails();
-                } else {
-                    this.mails = this.mailService.getMailsByCategory(category);
-                }
-            });
+    onDeleteMails() {
+        this.mailService.deleteMails();
+        this.loadMails(this.category);
+    
+    }
+
+    onMailChecked(mailId: number) {
+        this.mailService.checkEmails(mailId);
+    }
+
+    onPrevent(event: Event) {
+        this.preventPropagation(event);
+    }
+
+    private loadMails(category = "Inbox") {
+        if (category === "Inbox") {
+            this.mails$ = this.mailService.getMails();
+        } else {
+            this.mails$ = this.mailService.getMails(category);
+        }
+    }
+
+    private preventPropagation(event: Event) {
+        event.stopPropagation();
     }
 
     ngOnDestroy(): void {
-        this.mailsSubscription.unsubscribe();
+        this.paramMapSubscription.unsubscribe();
     }
 }

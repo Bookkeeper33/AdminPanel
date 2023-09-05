@@ -4,7 +4,14 @@ export interface Mail {
     label: { labelName: string; color: string };
     author: string;
     img: string;
+    contactInfo: {
+        phone: string;
+        email: string;
+        title: string;
+        address: string;
+    };
     subject: string;
     body: string;
     date: Date;
+    isChecked: boolean;
 }

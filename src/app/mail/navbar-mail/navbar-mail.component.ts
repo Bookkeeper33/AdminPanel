@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MailService } from "../mail.service";
 import { Label } from "../interfaces/label.interface";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "app-navbar-mail",
@@ -10,9 +11,8 @@ import { Label } from "../interfaces/label.interface";
 export class NavbarMailComponent implements OnInit {
     labels: Label[] = [];
     categories: string[] = [];
-    selectedCategory: string = "Inbox";
 
-    constructor(private mailService: MailService) {}
+    constructor(private router: Router, private mailService: MailService) {}
 
     ngOnInit(): void {
         this.categories = this.mailService.getCategories();
@@ -20,8 +20,7 @@ export class NavbarMailComponent implements OnInit {
     }
 
     onCategorySelected(category: string) {
-        this.selectedCategory = category;
-        this.mailService.selectCategory(category);
+        this.router.navigate(["mail", category]);
     }
 
     onAddLabel(): void {
