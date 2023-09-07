@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Observable, of } from "rxjs";
+import { BehaviorSubject, Observable, of } from "rxjs";
 
 import { mailsMock, categoriesMock } from "./mock/mail-data.mock";
 import { Mail } from "./interfaces/mail.interface";
@@ -9,6 +9,11 @@ import { Label } from "./interfaces/label.interface";
 export class MailService {
     private categories = categoriesMock;
     private mails: Mail[] = mailsMock;
+    openModal$ = new BehaviorSubject<boolean>(false);
+
+    toggleModal(open: boolean) {
+        this.openModal$.next(open);
+    }
 
     getMails(category?: string): Observable<Mail[]> {
         if (category) {
@@ -40,6 +45,17 @@ export class MailService {
         if (foundMail) {
             foundMail.isChecked = !foundMail.isChecked;
         }
+    }
+
+    moveTo(newCategory: string) {
+        this.mails = this.mails.map((mail) => {
+            if (mail.isChecked) {
+                this.checkEmails(mail.id);
+                return { ...mail, category: newCategory };
+            }
+
+            return mail;
+        });
     }
 
     private getMailsByCategory(category: string) {

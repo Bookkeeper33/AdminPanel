@@ -1,4 +1,47 @@
-<button class="mt-4 btn button-delete" (click)="onDeleteMails()">Delete</button>
+<button class="mt-4 me-2 btn button-delete" (click)="onDeleteMails()">
+    Delete
+</button>
+<div class="btn-group dropend" clickOutside (clickedOutside)="onClickOutside()">
+    <button
+        class="mt-4 btn btn-sm button-dropdown dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        (click)="onClickDropdown()"
+    >
+        More
+    </button>
+    <ul class="dropdown-menu my-5 mx-5" [ngClass]="{ show: clickedDropdown }">
+        <li>
+            <button
+                class="dropdown-item"
+                type="button"
+                (click)="onCategoryChange('Trash')"
+            >
+                Move to trash
+            </button>
+        </li>
+        <li>
+            <button
+                class="dropdown-item"
+                type="button"
+                (click)="onCategoryChange('Important')"
+            >
+                Mark as Important
+            </button>
+        </li>
+        <li>
+            <button
+                class="dropdown-item"
+                type="button"
+                (click)="onCategoryChange('Spam')"
+            >
+                Check as Spam
+            </button>
+        </li>
+    </ul>
+</div>
+
 <table class="table mt-3">
     <tbody class="table-group table-light">
         <tr

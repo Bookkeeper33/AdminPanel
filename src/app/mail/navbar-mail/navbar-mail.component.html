@@ -1,5 +1,10 @@
 <div class="d-flex justify-content-center my-2 py-2">
-    <button class="btn btn-light w-75 border button-compose">Compose</button>
+    <button
+        class="btn btn-light w-75 border button-compose"
+        (click)="toggleModal()"
+    >
+        Compose
+    </button>
 </div>
 <div class="nav flex-column" *ngFor="let category of categories">
     <a

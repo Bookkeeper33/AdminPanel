@@ -13,6 +13,7 @@ import { MailService } from "../mail.service";
 export class MailListComponent implements OnInit, OnDestroy {
     mails$!: Observable<Mail[]> | undefined;
     category: string = "";
+    clickedDropdown: boolean = false;
 
     private paramMapSubscription!: Subscription;
 
@@ -30,10 +31,12 @@ export class MailListComponent implements OnInit, OnDestroy {
         );
     }
 
-    onDeleteMails() {
-        this.mailService.deleteMails();
-        this.loadMails(this.category);
-    
+    onClickDropdown() {
+        this.clickedDropdown = !this.clickedDropdown;
+    }
+
+    onClickOutside() {
+        this.clickedDropdown = false;
     }
 
     onMailChecked(mailId: number) {
@@ -42,6 +45,21 @@ export class MailListComponent implements OnInit, OnDestroy {
 
     onPrevent(event: Event) {
         this.preventPropagation(event);
+    }
+
+    onDeleteMails() {
+        this.mailService.deleteMails();
+        this.loadMails(this.category);
+    }
+
+    onCategoryChange(newCategory: string) {
+        this.mailService.moveTo(newCategory);
+        this.loadMails(this.category);
+        this.clickedDropdown = false;
+    }
+
+    ngOnDestroy(): void {
+        this.paramMapSubscription.unsubscribe();
     }
 
     private loadMails(category = "Inbox") {
@@ -54,9 +72,5 @@ export class MailListComponent implements OnInit, OnDestroy {
 
     private preventPropagation(event: Event) {
         event.stopPropagation();
-    }
-
-    ngOnDestroy(): void {
-        this.paramMapSubscription.unsubscribe();
     }
 }

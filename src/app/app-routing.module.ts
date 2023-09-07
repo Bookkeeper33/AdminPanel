@@ -20,6 +20,11 @@ const routes: Routes = [
             import("./mail/mail.module").then((m) => m.MailModule),
     },
     {
+        path: "profile",
+        loadChildren: () =>
+            import("./profile/profile.module").then((m) => m.ProfileModule),
+    },
+    {
         path: "**",
         redirectTo: "/dashboard",
     },

@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="compose modal-content">
+        <div class="compose-header">
+            <span>New message</span>
+            <span class="compose-close" (click)="onCloseModal()">
+                <i class="fa-solid fa-xmark fa-lg"></i>
+            </span>
+        </div>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="border bg-light">
+            <div class="form-group">
+                <input
+                    class="form-control shadow-none"
+                    type="text"
+                    id="emailTo"
+                    placeholder="To"
+                    name="emailTo"
+                    ngModel
+                    #emailTo="ngModel"
+                    required
+                    email
+                    [ngClass]="{
+                        invalid:
+                            emailTo.invalid &&
+                            (emailTo.dirty || emailTo.touched)
+                    }"
+                />
+                <span
+                    class="alert"
+                    *ngIf="
+                        emailTo.invalid && (emailTo.dirty || emailTo.touched)
+                    "
+                    >Email is required and should have @
+                </span>
+            </div>
+            <div class="form-group">
+                <input
+                    class="form-control shadow-none"
+                    type="text"
+                    id="subject"
+                    placeholder="Subject"
+                    name="mailSubject"
+                    ngModel
+                    required
+                    #subject="ngModel"
+                    [ngClass]="{
+                        invalid:
+                            subject.invalid &&
+                            (subject.dirty || subject.touched)
+                    }"
+                />
+                <span
+                    class="alert"
+                    *ngIf="
+                        subject.invalid && (subject.dirty || subject.touched)
+                    "
+                    >Subject is required
+                </span>
+            </div>
+
+            <div class="form-group">
+                <textarea
+                    class="form-control shadow-none"
+                    name="mailContent"
+                    id="mail-content"
+                    cols="40"
+                    rows="10"
+                    style="resize: none"
+                    ngModel
+                    required
+                ></textarea>
+            </div>
+
+            <button
+                type="submit"
+                class="btn btn-send btn-sm px-3 my-1 mx-1"
+                [disabled]="!f.form.valid"
+            >
+                Send
+            </button>
+            <button
+                type="button"
+                class="btn-trash float-end px-2 pt-1 my-1 mx-1"
+                (click)="onResetMail(f)"
+            >
+                <i class="fa-solid fa-trash" style="color: #828282"></i>
+            </button>
+        </form>
+    </div>
+</div>

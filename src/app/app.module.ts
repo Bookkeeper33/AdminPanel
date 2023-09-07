@@ -8,6 +8,7 @@ import { CoreModule } from "./core/core.module";
 import { SharedModule } from "./shared/shared.module";
 import { DashboardModule } from "./dashboard/dashboard.module";
 import { MailModule } from "./mail/mail.module";
+import { ProfileModule } from "./profile/profile.module";
 
 import { AppComponent } from "./app.component";
 
@@ -22,6 +23,7 @@ import { AppComponent } from "./app.component";
         SharedModule,
         DashboardModule,
         MailModule,
+        ProfileModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
