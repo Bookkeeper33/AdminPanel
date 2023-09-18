@@ -1,0 +1,83 @@
+* {
+    color: #666;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    border-bottom: 1px solid #d6d6d6;
+    padding-top: 20px;
+    margin-bottom: 14px;
+    line-height: 39px;
+    width: 100%;
+}
+
+label {
+    line-height: 24px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.profile-img {
+    width: 202px;
+    height: 202px;
+    position: relative;
+    cursor: pointer;
+    border: 1px dashed #b8b8b8;
+}
+
+.fa-brands {
+    color: #209e91;
+}
+
+.social-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    flex-wrap: wrap;
+    border: 2px solid #209e91;
+    border-radius: 5px;
+    margin: 10px 10px 5px 10px;
+    padding: 10px;
+}
+
+.social-profile a {
+    text-decoration: none;
+}
+
+.btn-update {
+    margin-top: 25px;
+    padding: 5px 10px 5px 10px;
+    background-color: #209e91;
+    color: #eee;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: all 0.1s ease-in;
+}
+
+.btn-update:hover {
+    transform: scaleY(1.1) scaleX(1.1);
+}
+
+.progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+
+    background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 40px 40px;
+    background-color: #209e91;
+}

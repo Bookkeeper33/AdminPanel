@@ -1,1 +1,196 @@
+<div class="container-fluid rounded bg-light px-5 py-4">
+    <div>Your profile is 70% Complete</div>
+    <div
+        class="progress"
+        role="progressbar"
+        aria-valuenow="70"
+        aria-valuemin="0"
+        aria-valuemax="100"
+    >
+        <div class="progress-bar" style="width: 70%">70%</div>
+    </div>
+    <form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
+        <div class="container-info mt-4">
+            <h3>General information</h3>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <label class="col-sm-3" for="picture">Picture</label>
+                        <div class="col-sm-9">
+                            <img
+                                src="../../assets/gosling.jpg"
+                                alt="gosling"
+                                class="profile-img img-fluid"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="row" formGroupName="general">
+                <div class="col-md-6">
+                    <div class="form-floating mb-3">
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="floatingName"
+                            placeholder=""
+                            formControlName="firstName"
+                        />
+                        <label for="floatingName">First Name</label>
+                    </div>
+                    <div class="form-floating">
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="floatingSurname"
+                            placeholder="Surname"
+                            formControlName="lastName"
+                        />
+                        <label for="floatingSurname">Last Name</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <select
+                            class="form-select mb-3"
+                            id="floatingSelect"
+                            formControlName="department"
+                        >
+                            <option
+                                *ngFor="let dep of departments"
+                                [ngValue]="dep"
+                            >
+                                {{ dep }}
+                            </option>
+                        </select>
+                        <label for="floatingSelect">Department</label>
+                    </div>
+                    <div class="form-floating">
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="floatingOccupation"
+                            placeholder="Junior Web Developer"
+                            formControlName="occupation"
+                        />
+                        <label for="floatingOccupation">Occupation</label>
+                    </div>
+                </div>
+            </div>
+            <h3>Change password</h3>
+            <div class="row" formGroupName="password">
+                <div class="col">
+                    <label for="password" class="ms-1 mb-1">Password</label>
+                    <input
+                        type="password"
+                        class="form-control"
+                        placeholder=""
+                        value="1234567"
+                        aria-label="password"
+                        id="password"
+                        formControlName="newPassword"
+                    />
+                </div>
+                <div class="col">
+                    <label for="confirmedPassword" class="ms-1 mb-1"
+                        >Confirm password</label
+                    >
+                    <input
+                        type="password"
+                        class="form-control"
+                        placeholder=""
+                        aria-label="password"
+                        id="confirmedPassword"
+                        formControlName="confirmedPassword"
+                    />
+                </div>
+            </div>
+
+            <h3>Contact info</h3>
+            <div class="row" formGroupName="contactInfo">
+                <div class="col-md-6">
+                    <div class="form-floating mb-3">
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="floatingEmail"
+                            placeholder=""
+                            value="yarko12@gmail.com"
+                            formControlName="email"
+                        />
+                        <label for="floatingName">Email</label>
+                    </div>
+                    <div class="form-floating">
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="floatingPhone"
+                            placeholder="Phone"
+                            formControlName="phone"
+                        />
+                        <label for="floatingSurname">Phone</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating mb-3">
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="floatingLocation"
+                            placeholder=""
+                            value="Kyiv, Ukraine"
+                            formControlName="location"
+                        />
+                        <label for="floatingLocation">Location</label>
+                    </div>
+                    <div class="form-floating">
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="floatingAddress"
+                            placeholder="Address"
+                            formControlName="address"
+                        />
+                        <label for="floatingAddress">Address</label>
+                    </div>
+                </div>
+            </div>
+            <h3>Social Profiles</h3>
+            <div class="row">
+                <div class="social-profile col-md-3 col-sm-4">
+                    <a href=""
+                        ><i class="fa-brands fa-facebook fa-xl me-2"></i
+                        ><span>Facebook</span>
+                    </a>
+                    <i class="fa-solid fa-xmark fa-xl"></i>
+                </div>
+                <div class="social-profile col-md-3 col-sm-4">
+                    <a href="">
+                        <i class="fa-brands fa-linkedin fa-xl me-2"></i
+                        ><span>LinkedIn</span>
+                    </a>
+                    <i class="fa-solid fa-xmark fa-xl"></i>
+                </div>
+                <div class="social-profile col-md-3 col-sm-4">
+                    <a href="">
+                        <i class="fa-brands fa-github fa-xl me-2"></i
+                        ><span>Github</span>
+                    </a>
+                    <i class="fa-solid fa-xmark fa-xl"></i>
+                </div>
+                <div class="social-profile col-md-3 col-sm-4">
+                    <a href="">
+                        <i class="fa-brands fa-steam fa-xl me-2"></i
+                        ><span>Steam</span>
+                    </a>
+                    <i class="fa-solid fa-xmark fa-xl"></i>
+                </div>
+            </div>
+            <button class="btn btn-update">
+                <i class="fa-solid fa-check" style="color: #eee"></i> Update
+                profile
+            </button>
+        </div>
+    </form>
+</div>
